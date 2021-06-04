@@ -1,0 +1,29 @@
+{
+  "name": "iot-for-all-starling",
+  "version": "1.0.0",
+  "description": "IoT Device Simulator",
+  "scripts": {
+    "clean": "rimraf -rf ./dist",
+    "start-app": "cd app && npm start",
+    "start-server": "nodemon --watch --signal SIGKILL --ext go --exec \"go run\" ./cmd/server",
+    "build-app": "cd app && npm run build",
+    "build-server": "go build -o ./dist/ ./cmd/server",
+    "build": "npm run build-app && npm run build-server",
+    "start": "concurrently \"npm:start-*\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/riteshrao/starling.git"
+  },
+  "author": "Ritesh Rao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/riteshrao/starling/issues"
+  },
+  "homepage": "https://github.com/riteshrao/starling#readme",
+  "dependencies": {
+    "concurrently": "^6.2.0",
+    "nodemon": "^2.0.7",
+    "rimraf": "^3.0.2"
+  }
+}

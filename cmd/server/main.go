@@ -141,7 +141,6 @@ Logger:
 		cfg.Data.DataDirectory = fmt.Sprintf("%s/.starling", home)
 	}
 
-	//fmt.Printf("loaded configuration from %s\n", viper.ConfigFileUsed())
 	return cfg, nil
 }
 

@@ -10,8 +10,8 @@ import (
 	"github.com/iot-for-all/starling/pkg/storing"
 )
 
-// listDeviceConfigs lists all device configurations for a simulation.
-func listDeviceConfigs(w http.ResponseWriter, r *http.Request) {
+// ListDeviceConfigs lists all device configurations for a simulation.
+func ListDeviceConfigs(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	simID := vars["id"]
 
@@ -25,8 +25,8 @@ func listDeviceConfigs(w http.ResponseWriter, r *http.Request) {
 	handleError(err, w)
 }
 
-// getDeviceConfig gets a specific device configuration for a simulation.
-func getDeviceConfig(w http.ResponseWriter, r *http.Request) {
+// GetDeviceConfig gets a specific device configuration for a simulation.
+func GetDeviceConfig(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	simID := vars["id"]
 	cfgID := vars["configId"]
@@ -46,8 +46,8 @@ func getDeviceConfig(w http.ResponseWriter, r *http.Request) {
 	handleError(err, w)
 }
 
-// upsertDeviceConfig creates a new or updates an existing device configuration for a simulation.
-func upsertDeviceConfig(w http.ResponseWriter, r *http.Request) {
+// UpsertDeviceConfig creates a new or updates an existing device configuration for a simulation.
+func UpsertDeviceConfig(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	simID := vars["id"]
 
@@ -72,8 +72,8 @@ func upsertDeviceConfig(w http.ResponseWriter, r *http.Request) {
 	handleError(err, w)
 }
 
-// deleteDeviceConfig deletes an existing device configuration for a simulation.
-func deleteDeviceConfig(w http.ResponseWriter, r *http.Request) {
+// DeleteDeviceConfig deletes an existing device configuration for a simulation.
+func DeleteDeviceConfig(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	simID := vars["id"]
 	cfgID := vars["configId"]

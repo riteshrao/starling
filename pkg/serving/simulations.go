@@ -3,17 +3,18 @@ package serving
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/gorilla/mux"
-	"github.com/iot-for-all/starling/pkg/models"
-	"github.com/iot-for-all/starling/pkg/storing"
 	"io/ioutil"
 	"net/http"
 	"strconv"
 	"strings"
+
+	"github.com/gorilla/mux"
+	"github.com/iot-for-all/starling/pkg/models"
+	"github.com/iot-for-all/starling/pkg/storing"
 )
 
-// simulationDetail represents simulation along with device configurations.
-type simulationDetail struct {
+// SimulationDetail represents simulation along with device configurations.
+type SimulationDetail struct {
 	models.Simulation
 	DeviceConfig []*models.SimulationDeviceConfig `json:"deviceConfig"`
 }
@@ -50,7 +51,7 @@ func getSimulation(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	o := simulationDetail{
+	o := SimulationDetail{
 		Simulation:   *sim,
 		DeviceConfig: configs,
 	}
